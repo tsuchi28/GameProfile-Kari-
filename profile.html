@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= HtmlService.createHtmlOutputFromFile('p_css').getContent(); ?>
+  </head>
+  <body>
+    
+    <h1 class="text-center">profile</h1>
+    <div class="header">
+      <figure class="profile-image">
+        <p><img src="<?var data = getData();output.append(data[id_row][5])?>" width="100" height="100"></p>
+      </div>
+      <table class="mynameis" >
+        <tr class="tr1">
+          <td><h2>名前</h2></td>
+          <td><h2>id</h2></td>
+        </tr>
+        <tr class="tr2">
+          <td><p><?var data = getData();
+                  output.append(data[id_row][4])?></p></td>
+          <td><p><?var data = getData();
+                  output.append(data[id_row][0])?></p></td>
+        </tr>
+      </table>
+      </figure>
+      
+      <div class="p_game">
+        <h2>ゲーム名</h2>
+        <h5>ゲームタグ</h5> 
+      </div>
+      
+      <ol class="p_gamename">
+          <li> <?var data = getData();
+                output.append(data[id_row][7])?> </li>
+            <div class="p_tag">
+              <ul>
+                <li><?var data = getData();
+                  output.append(data[id_row][17])?></li>
+                <li><?var data = getData();
+                  output.append(data[id_row][18])?></li>
+              </ul> 
+            </div>
+            
+          <li><?var data = getData();
+                  output.append(data[id_row][8])?></li>
+            <div class="p_tag">
+              <ul>
+                <li><?var data = getData();
+                  output.append(data[id_row][19])?></li>
+                <li><?var data = getData();
+                  output.append(data[id_row][20])?></li>
+              </ul> 
+            </div>
+
+          <li><?var data = getData();
+                  output.append(data[id_row][9])?></li>
+            <div class="p_tag">
+              <ul>
+                <li><?var data = getData();
+                  output.append(data[id_row][21])?></li>
+                <li><?var data = getData();
+                  output.append(data[id_row][22])?></li>
+              </ul> 
+            </div>
+
+      </ol>
+      <h3 class="p_game">自己紹介</h3>
+      <p class="p_profile"><?var data = getData();
+                  output.append(data[id_row][6])?></p>
+      
+      <a class="p_btn" href="<?= getAppUrl() ?>?page=l_login">ログアウト</a>
+      <a class="p_btn" href="<?= getAppUrl() ?>?page=Search">検索</a>
+
+      <form action="<?= getAppUrl() ?>" method="POST">
+        <!-- 隠しデータの付与(lastPage:送信前のページ) -->
+        <input type="hidden" name="lastPage" value="profile">
+        <input type="hidden" name="id" value="<?= id ?>">
+        <input class="p_btn" type="submit" value="編集">
+      </form>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <base target="_top">
+    <!--cssファイルの読み込み-->
+    <?!= include('l_css'); ?>
+  </head>
+
+  <body>
+    <div class="form-wrapper">
+			<h1>アカウント作成</h1>
+			<form action="<?= getAppUrl() ?>" method="post">
+				<div class="form-item">
+					<p><label>
+						<input type="email" name="a_mail" placeholder="メールアドレス" required>
+					</label></p>
+				</div>
+				<div class="form-item">
+					<p><label>
+						<input type="text" name="a_id" placeholder="ID" required>
+					</label></p>
+				</div>
+				<div class="form-item">
+					<p><label>
+						<input type="password" name="a_pass1" placeholder="パスワード" required>
+					</label></p>
+				</div>
+				<div class="form-item">
+					<p><label>
+						<input type="password" name="a_pass2" placeholder="パスワード（確認）" required>
+					</label></p>
+				</div>
+				<!-- 隠しデータの付与(lastPage:送信前のページ) -->
+				<input type="hidden" name="lastPage" value="a_account">
+				<div class="button-panel">
+					<input type="submit" class="button" value="アカウント作成">
+				</div>
+        <div>
+          <p style="text-align: center; margin: 30px;">
+            <a href="<?= getAppUrl() ?>?page=l_login">ログインページに戻る</a>
+          </p>
+        </div>
+			</form>
+		</div>
+  </body>
+</html>

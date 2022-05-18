@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= HtmlService.createHtmlOutputFromFile('p_css').getContent(); ?>
+  </head>
+  <body>
+    <form action="<?= getAppUrl() ?>" method="POST">
+    <h1 class="text-center">profile</h1>
+    <div class="header">
+      <figure class="profile-image">
+        <p><img src="https://pillow-oimachi.bionly.net/img/test1.png" alt="プロフィール画像" width="100" height="100"></p>
+        <p><input type='url' name='p_url'  id='p_uri' value="<?= icon ?>" placeholder='画像のURL'></p>
+      </div>
+      <table class="mynameis" >
+        <tr class="tr1">
+          <td><h2>Name</h2></td>
+          <td><h2>id</h2></td>
+        </tr>
+        <tr class="tr2">
+          <td><p><input type="text" name="p_name" value="<?= name ?>" placeholder="名前"></p></td>
+          <td><p><?= id ?></p></td>
+        </tr>
+      </table>
+      </figure>
+      
+      <div class="p_game">
+        <h2>ゲーム名</h2>
+        <h5>ゲームタグ</h5> 
+      </div>
+      
+      <ol class="p_gamename">
+          <li><input type="text" name="gamename1" value="<?= game1 ?>" placeholder="ゲーム名1"></li>
+            <div class="p_tag">
+              <ul>
+                <li><input type="text" name="p_tag1" value="<?= gameTag1 ?>" placeholder="ゲームタグ1-1"></li>
+                <li><input type="text" name="p_tag2" value="<?= gameTag2 ?>" placeholder="ゲームタグ1-2"></li>
+              </ul> 
+            </div>
+            
+          <li><input type="text" name="gamename2"　value="<?= game2 ?>" placeholder="ゲーム名2"></li>
+            <div class="p_tag">
+              <ul>
+                <li><input type="text" name="p_tag3" value="<?= gameTag3 ?>" placeholder="ゲームタグ2-1"></li>
+                <li><input type="text" name="p_tag4" value="<?= gameTag4 ?>" placeholder="ゲームタグ2-2"></li>
+              </ul> 
+            </div>
+
+          <li><input type="text" name="gamename3" value="<?= game3 ?>" placeholder="ゲーム名3"></li>
+            <div class="p_tag">
+              <ul>
+                <li><input type="text" name="p_tag5" value="<?= gameTag5 ?>" placeholder="ゲームタグ3-1"></li>
+                <li><input type="text" name="p_tag6" value="<?= gameTag6 ?>" placeholder="ゲームタグ3-2"></li>
+              </ul> 
+            </div>
+
+      </ol>
+      <h3 class="p_game">自己紹介</h4>
+      <p class="p_profile">
+        <textarea name="p_profile" value="<?= profile ?>"></textarea> <br>
+      </p>
+      <!-- 隠しデータの付与(lastPage:送信前のページ) -->
+			<input type="hidden" name="lastPage" value="profileEdit">
+      <input type="hidden" name="id" value="<?= id ?>">
+      <input type="submit" name="btn" value="編集完了">
+
+    </form>
+  </body>
+</html>

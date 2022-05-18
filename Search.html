@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <form action="<?= getAppUrl() ?>" method="POST">
+    <label for="name">検索</label>
+    <input type="search" id="s_name" name="s_name" size="10">
+    <!-- 隠しデータの付与(lastPage:送信前のページ) -->
+    <input type="hidden" name="lastPage" value="Search">
+    <input type="submit" id="s_on" name="s_on" value="検索">
+    <br>
+    <p>
+      <?!=result ?>
+    </p>
+  </body>
+</html>

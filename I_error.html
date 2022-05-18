@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <base target="_top">
+   <?!= HtmlService.createHtmlOutputFromFile('l_css').getContent(); ?>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+ <body>
+   <h2>エラー：IDまたはパスワードが間違っています</h2>
+   <p style="text-align: center;"><a href="<?= getAppUrl() ?>?page=l_login">ログインページに戻る</a></p>
+ </body>
+</html>
